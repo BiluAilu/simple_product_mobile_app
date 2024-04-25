@@ -90,19 +90,15 @@ class _HomeProductScreenState extends State<HomeProductScreen> {
               itemBuilder: (context, index) {
                 final product = MockProducts.products[index];
                 return ProductCard(
-                  //   title: product['title'],
-
-                  //  price: product['price'].toDouble(),
-
-                  //  description: product['description'], imageUrl: product['imageUrl']
+                 
                   title: product['title'] ??
-                      '', // Use an empty string if title is null
+                      '', 
                   price: (product['price'] as int?)?.toDouble() ??
-                      0.0, // Use 0.0 if price is null or not an int
-                  description: product['description'] ??
-                      '', // Use an empty string if description is null
+                      0.0, 
+                  description: product['category'] ??
+                      '', 
                   imageUrl: product['image'] ??
-                      '', // Use an empty string if imageUrl is null
+                      '',
                 );
               },
             ),
