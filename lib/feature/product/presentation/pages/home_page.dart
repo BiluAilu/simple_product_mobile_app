@@ -26,26 +26,9 @@ class _HomeProductScreenState extends State<HomeProductScreen> {
             ),
           ),
         ),
-        actions: [
-          Container(
-            width: 40.0,
-            height: 40.0,
-            margin: const EdgeInsets.only(top: 49.0, left: 357.0),
-            padding: EdgeInsets.zero,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(9.0),
-                bottomLeft: Radius.circular(0.0),
-                topRight: Radius.circular(0.0),
-                bottomRight: Radius.circular(0.0),
-              ),
-              color: Colors.transparent, // Set your desired color here
-            ),
-            child: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.notification_add)),
-          ),
-        ],
-        // centerTitle: true,
+
+       
+        centerTitle: true,
         title: const Column(
           children: [
             Text(
@@ -70,6 +53,26 @@ class _HomeProductScreenState extends State<HomeProductScreen> {
             )
           ],
         ),
+      
+       actions: [
+          // Container(
+          //   width: 40.0,
+          //   height: 40.0,
+          //   margin: const EdgeInsets.only(top: 49.0, left: 357.0),
+          //   padding: EdgeInsets.zero,
+          //   decoration: const BoxDecoration(
+          //     borderRadius: BorderRadius.only(
+          //       topLeft: Radius.circular(9.0),
+          //       bottomLeft: Radius.circular(0.0),
+          //       topRight: Radius.circular(0.0),
+          //       bottomRight: Radius.circular(0.0),
+          //     ),
+          //     color: Colors.transparent, // Set your desired color here
+          //   ),
+          //   child: IconButton(
+          //       onPressed: () {}, icon: const Icon(Icons.notification_add)),
+          // ),
+        ],
       ),
       body: Flex(
         direction: Axis.vertical,
@@ -95,7 +98,7 @@ class _HomeProductScreenState extends State<HomeProductScreen> {
                       '', 
                   price: (product['price'] as int?)?.toDouble() ??
                       0.0, 
-                  description: product['category'] ??
+                  category: product['category'] ??
                       '', 
                   imageUrl: product['image'] ??
                       '',

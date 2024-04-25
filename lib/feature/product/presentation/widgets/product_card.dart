@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 class ProductCard extends StatelessWidget {
   final String title;
   final double price;
-  final String description;
+  final String category;
   final String imageUrl;
 
   const ProductCard({
     Key? key,
     required this.title,
     required this.price,
-    required this.description,
+    required this.category,
     required this.imageUrl,
   }) : super(key: key);
 
@@ -50,15 +50,32 @@ class ProductCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 20.0,
+  fontWeight: FontWeight.w500,
+  height: 30.0 / 20.0, 
+  
+),
               ),
-              Text('\$$price'),
+              Text('\$$price',style: TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 14.0,
+  fontWeight: FontWeight.w500,
+  height: 21.0 / 14.0,
+),),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(description),
+              Text(category,style: TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 12.0,
+  fontWeight: FontWeight.w400,
+  height: 18.0 / 12.0, 
+  color: Colors.grey
+),),
               const Icon(Icons.star, color: Colors.yellow),
             ],
           ),
