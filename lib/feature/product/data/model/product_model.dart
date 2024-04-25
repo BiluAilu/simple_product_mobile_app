@@ -7,29 +7,28 @@ class ProductModel extends Product{
   const ProductModel({  super.id, super.title,super.category,super.price,super.desc,super.imageUrl});
 
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) {
-    
-    
+   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
-      id: json['_id'],
-      title: json['name'],
-      category: json['category'] ?? '',
-      price: json['price'] ?? '',
-      desc: json['description'] ?? '',
-      imageUrl: json['image']
-      
-      
+      id: json['id'],
+      title: json['title'],
+      category: json['category'],
+      price: json['price'] != null ? double.parse(json['price'].toString()) : null,
+      desc: json['desc'],
+      imageUrl: json['imageUrl'],
     );
   }
 
-    Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
     return {
-      'id':id,
-      
-   
+      'id': id,
+      'title': title,
+      'category': category,
+      'price': price,
+      'desc': desc,
+      'imageUrl': imageUrl,
     };
   }
-
-
-
 }
+
+
+
